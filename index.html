@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Push example</title>
+
+    <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
+
+    <script>
+      var firebaseConfig = {
+        apiKey: "",
+        authDomain: "",
+        projectId: "",
+        storageBucket: "",
+        messagingSenderId: "",
+        appId: "",
+        measurementId: "",
+      };
+
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+
+      var fcm = firebase.messaging();
+      fcm
+        .getToken()
+        .then(function (token) {
+          console.log(token);
+        })
+        .catch(function (err) {
+          console.log(err);
+        });
+    </script>
+  </head>
+  <body>
+    My firebase app
+  </body>
+</html>
